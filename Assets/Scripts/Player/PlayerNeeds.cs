@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNeeds : MonoBehaviour
-{
+public class PlayerNeeds : MonoBehaviour {
+    public enum Type {
+        Hunger,
+        Thirst
+    };
+
+    public static PlayerNeeds current;
     [SerializeField] float hungerLevel;
     [SerializeField] float thirstLevel;
     [SerializeField] float hungerDropModifier = 1;
     [SerializeField] float thirstDropModifier = 1;
-    const float maxHungerLevel = 100;
-    const float maxThirstLevel = 100;
+    [SerializeField] float maxHungerLevel = 100;
+    [SerializeField] float maxThirstLevel = 100;
 
     // Start is called before the first frame update
     void Start() {
+        current = this;
         hungerLevel = maxHungerLevel;
         thirstLevel = maxThirstLevel;
     }
@@ -32,6 +38,17 @@ public class PlayerNeeds : MonoBehaviour
 
         if (thirstLevel <= 0) {
             Debug.Log("You are dying of thirst");
+        }
+    }
+
+    public void AdjustNeed(float adjustAmount, Type needType) {
+        switch (needType) {
+            case Type.Hunger:
+                this.hungerLevel += adjustAmount;
+                break;
+            case Type.Thirst:
+                this.thirstLevel += adjustAmount;
+                break;
         }
     }
 }
