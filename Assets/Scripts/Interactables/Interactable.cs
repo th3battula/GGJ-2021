@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour {
     [SerializeField] Canvas canvas;
     [SerializeField] Text text;
     [SerializeField] string interactText;
+    [SerializeField] public bool isHighlightingDisabled;
 
     GameObject mainCamera;
 
@@ -30,8 +31,10 @@ public class Interactable : MonoBehaviour {
     }
 
     public virtual void SetIsHovering(bool isHovering) {
-        text.enabled = true;
-        SetMaterialsShouldHighlight(isHovering);
+        if (!isHighlightingDisabled) {
+            text.enabled = true;
+            SetMaterialsShouldHighlight(isHovering);
+        }
     }
 
     public void SetMaterialsShouldHighlight(bool shouldHighlight) {
@@ -49,6 +52,13 @@ public class Interactable : MonoBehaviour {
     public bool IsHovering {
         get {
             return Convert.ToBoolean(rend.material.GetInt("ShouldHighlight"));
+        }
+    }
+
+    public void setIsHighlightingDisabled(bool shouldDisableHighlighting) {
+        isHighlightingDisabled = shouldDisableHighlighting;
+        if (!shouldDisableHighlighting) {
+            SetMaterialsShouldHighlight(false);
         }
     }
 }
