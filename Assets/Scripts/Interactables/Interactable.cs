@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour {
     public void Disable() {
         text.enabled = false;
         SetMaterialsShouldHighlight(false);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public bool IsHovering {
