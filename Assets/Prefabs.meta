@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 01a09c9e4b6b1164cb59184b4ecdceb9
+=======
+guid: 06e82076ca8fa7446884623c85b3ece3
+>>>>>>> 54703db... added standard player scripts and whatnot
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
