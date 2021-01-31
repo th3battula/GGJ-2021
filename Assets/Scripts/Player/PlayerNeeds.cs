@@ -44,10 +44,10 @@ public class PlayerNeeds : MonoBehaviour {
     public void AdjustNeed(float adjustAmount, Type needType) {
         switch (needType) {
             case Type.Hunger:
-                this.hungerLevel += adjustAmount;
+                this.hungerLevel = Mathf.Clamp(this.hungerLevel + adjustAmount, 0, maxHungerLevel);
                 break;
             case Type.Thirst:
-                this.thirstLevel += adjustAmount;
+                this.thirstLevel = Mathf.Clamp(this.thirstLevel + adjustAmount, 0, maxThirstLevel);
                 break;
         }
     }
