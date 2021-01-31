@@ -524,7 +524,7 @@ MonoBehaviour:
   raycastLayermask:
     serializedVersion: 2
     m_Bits: 513
-  raycastDistance: 1.5
+  raycastDistance: 2.5
 --- !u!114 &5381210454033405468
 MonoBehaviour:
   m_ObjectHideFlags: 0
