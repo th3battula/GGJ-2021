@@ -7,8 +7,8 @@ public class Interactable : MonoBehaviour {
     [SerializeField] Canvas canvas;
     [SerializeField] Text text;
     [SerializeField] string interactText;
-    [SerializeField] public bool isHighlightingDisabled;
 
+    bool isHighlightingDisabled;
     GameObject mainCamera;
 
     void Start() {
@@ -59,6 +59,16 @@ public class Interactable : MonoBehaviour {
         isHighlightingDisabled = shouldDisableHighlighting;
         if (!shouldDisableHighlighting) {
             SetMaterialsShouldHighlight(false);
+        }
+    }
+
+    public bool IsHighlightingDisabled {
+        get {
+            return this.isHighlightingDisabled;
+        }
+
+        set {
+            this.isHighlightingDisabled = value;
         }
     }
 }

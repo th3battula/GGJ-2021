@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Plant : Interactable {
-    [SerializeField] bool isDepleted = false;
     [SerializeField] float needAdjustment = 10f;
     [SerializeField] PlayerNeeds.Type playerNeedType;
-    [SerializeField] float resetTimer;
     [SerializeField] float maxResetTimer = 15f;
+    [SerializeField] GameObject itemToDisable;
+
+    bool isDepleted = false;
+    float resetTimer;
 
     void Start() {
         resetTimer = maxResetTimer;
@@ -32,12 +32,14 @@ public class Plant : Interactable {
 
     void DepleteResource() {
         isDepleted = true;
-        this.isHighlightingDisabled = true;
+        this.IsHighlightingDisabled = true;
+        itemToDisable.SetActive(false);
     }
 
     void ResetResource() {
         isDepleted = false;
         resetTimer = maxResetTimer;
-        this.isHighlightingDisabled = false;
+        this.IsHighlightingDisabled = false;
+        itemToDisable.SetActive(true);
     }
 }
