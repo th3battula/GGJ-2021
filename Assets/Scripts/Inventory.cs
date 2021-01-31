@@ -13,11 +13,11 @@ public class Inventory {
         itemCounts = new Dictionary<ItemTypes, int>();
     }
 
-    public int AddItemToInventory(ItemTypes itemType, int amoutToAdd = 1) {
+    public int AdjustItemInventoryCount(ItemTypes itemType, int amountToAdd = 1) {
         if (itemCounts.ContainsKey(itemType)) {
-            itemCounts[itemType] += amoutToAdd;
+            itemCounts[itemType] += amountToAdd;
         } else {
-            itemCounts.Add(itemType, amoutToAdd);
+            itemCounts.Add(itemType, amountToAdd);
         }
 
         return GetItemCount(itemType);

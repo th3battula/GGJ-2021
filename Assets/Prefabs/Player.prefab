@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 2584974583998828236}
   - component: {fileID: 5381210454033405468}
   - component: {fileID: 2741230654168314462}
+  - component: {fileID: 2008261008}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -555,6 +556,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stickText: {fileID: 205038864}
+--- !u!114 &2008261008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584974583998828237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6f0b1d6ecff034dadc594afb546067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePit: {fileID: 6281385194971068883, guid: 18f929aff63d7e445bde6fd5d886c3e8, type: 3}
+  spawnDistance: 5
+  objectToCraft: {fileID: 0}
+  craftingIngredient: 0
+  craftingIngredientCountRequirement: 5
+  craftingPlaceholderPrefab: {fileID: 5821735542693994145, guid: 7cfbfb8932a9ffa41b4252dee99bfc10, type: 3}
+  groundObj: {fileID: 0}
+  activeCraftingPlaceholder: {fileID: 0}
+  isCrafting: 0
 --- !u!1 &2584974584763138283
 GameObject:
   m_ObjectHideFlags: 0
