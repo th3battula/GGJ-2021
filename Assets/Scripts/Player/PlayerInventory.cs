@@ -19,6 +19,12 @@ public class PlayerInventory : MonoBehaviour {
     }
 
     public void AddToInventory(Inventory.ItemTypes itemType) {
-        inventory.AddItemToInventory(itemType);
+        inventory.AdjustItemInventoryCount(itemType);
+    }
+
+    public Inventory GetInventory {
+        get {
+            return this.inventory;
+        }
     }
 }
