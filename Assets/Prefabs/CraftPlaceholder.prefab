@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0f052224403b14281b31130bf155e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToCraft: {fileID: 0}
+  playerObj: {fileID: 0}
+  placeholder: {fileID: 0}
