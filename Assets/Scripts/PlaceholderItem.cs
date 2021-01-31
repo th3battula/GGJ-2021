@@ -12,6 +12,7 @@ public class PlaceholderItem : MonoBehaviour
     [SerializeField] Material originalMaterial;
     [SerializeField] public GameObject playerObj;
     [SerializeField] GameObject placeholder;
+    [SerializeField] string originalTag;
 
     void Start() {
         isValid = true;
@@ -46,6 +47,7 @@ public class PlaceholderItem : MonoBehaviour
 
     public void TogglePlaceholderScript(bool isEnabled) {
         isPlaceholder = isEnabled;
+        gameObject.tag = isEnabled ? "Untagged" : originalTag;
         gameObject.GetComponent<Renderer>().material = isEnabled ?
             placeholderMaterial :
             originalMaterial;

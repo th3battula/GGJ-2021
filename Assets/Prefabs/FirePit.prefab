@@ -116,6 +116,7 @@ MonoBehaviour:
   originalMaterial: {fileID: 2100000, guid: 25b8ae88ff3e39644a1917d529ce3800, type: 2}
   playerObj: {fileID: 0}
   placeholder: {fileID: 0}
+  originalTag: FirePit
 --- !u!54 &3823255994282280587
 Rigidbody:
   m_ObjectHideFlags: 0
